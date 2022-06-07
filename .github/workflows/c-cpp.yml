@@ -16,6 +16,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: qmake
+      run: |
+        apt-get install qt5-default qtdeclarative5-dev qml-module-qtquick-controls \
+          qml-module-qtquick-dialogs qml-module-qtquick-layouts qml-module-qtquick-window2 \
+          qml-module-qtquick2 \
+          libgl1-mesa-glx libgl1-mesa-dev
+    - name: qmake
       run: qmake
     - name: make
       run: make
